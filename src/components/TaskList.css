@@ -1,0 +1,11 @@
+.colum{
+    width: 300px;
+    max-height: 700px;
+    background-color: #f6f9fa;
+    border-radius: 15px;
+    padding: 17px 25px;
+    font-size: 1.4em;
+    font-weight: 400;
+    font-style: italic;
+    transition: 1s;
+}
