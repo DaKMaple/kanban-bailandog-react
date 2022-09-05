@@ -9,3 +9,32 @@
     font-style: italic;
     transition: 1s;
 }
+.btn-operation{
+    text-align: right;
+    overflow: hidden;
+   
+}
+.btn-operation img{
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+}
+.btn-operation img:hover{
+    cursor: pointer;
+}
+.task{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #ffffff;
+    margin-bottom: 10px;
+}
+.tasktitle{
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+.taskdetail{
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: #ccc;
+}

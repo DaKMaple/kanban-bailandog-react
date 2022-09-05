@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import Popup from "./Popup";
+import uuid from "react-uuid"
 const AddTaskPopup = ({ tag ,setEvents}) => {
   const [popupState, setPopupState] = useState(true);
   const [task, setTask] = useState({
+    id:uuid(),
     taskName: "",
     taskDetail: "",
   });
@@ -24,6 +26,7 @@ const AddTaskPopup = ({ tag ,setEvents}) => {
   const closePopup = () => {
     setPopupState(false);
     setTask({
+      id:"",
       taskName: "",
       taskDetail: "",
     });
@@ -31,16 +34,13 @@ const AddTaskPopup = ({ tag ,setEvents}) => {
   const confirmSubmit = () => {
     //写保存数据的逻辑
     setEvents((prev)=>{
-      const copyArr=[...prev];
-      const copyEvent=copyArr[0]
-      copyArr.splice(0,1,{
-        ...copyEvent,
-        [tag]:[
-          ...copyEvent[tag],
-          { taskName: task.taskName, taskDetail: task.taskDetail },
-        ]
-      })
-    })
+      console.log(prev);
+      const copyArr={...prev};
+      console.log(copyArr);
+      console.log();
+      copyArr?.[tag]?.push(task)
+      return copyArr;
+    });
     //保存好数据后就关闭
     closePopup();
   };
